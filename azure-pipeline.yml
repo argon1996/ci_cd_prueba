@@ -18,6 +18,8 @@ stages:
   jobs:
   - job: Build
     steps:
+    - checkout: self  # Clonar el repositorio
+
     - task: UseNode@1
       inputs:
         versionSpec: '14.x'
