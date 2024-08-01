@@ -21,9 +21,9 @@ stages:
     - checkout: self  # Clonar el repositorio
 
     - script: |
-        npm config set proxy http://proxy.example.com:8080
-        npm config set https-proxy http://proxy.example.com:8080
-      displayName: 'Configurar Proxy'
+        npm config delete proxy
+        npm config delete https-proxy
+      displayName: 'Eliminar configuración del proxy'
 
     - task: UseNode@1
       inputs:
