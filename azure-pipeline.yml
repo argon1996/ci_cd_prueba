@@ -20,6 +20,11 @@ stages:
     steps:
     - checkout: self  # Clonar el repositorio
 
+    - script: |
+        npm config set proxy http://proxy.example.com:8080
+        npm config set https-proxy http://proxy.example.com:8080
+      displayName: 'Configurar Proxy'
+
     - task: UseNode@1
       inputs:
         versionSpec: '14.x'
